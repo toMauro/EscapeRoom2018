@@ -2,51 +2,48 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>jQuery &lt;time&gt; Countdown plugin</title>
+    <title>Countdown Demo</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="jquery.countdown.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="countdown.demo.css" type="text/css">
 </head>
 <body>
 
-<article id="content">
+<div id="content">
 
-    <h1><a href="https://github.com/kemar/jquery.countdown">jquery.countdown</a></h1>
-    <p>Unobtrusive and easily skinable countdown jQuery plugin generating a &lt;time&gt; tag.</p>
+    <!-- Valid global date and time string -->
+    <div><time>2017-12-08T17:47:00+0100</time></div><!-- Paris (winter) -->
+    <div><time>2017-12-08T08:47:00-0800</time></div><!-- California -->
+    <div><time>2017-12-08T16:47:00+0000</time></div><!-- UTC -->
 
-    <h2><code><span class="tag">&lt;h1&gt;</span>00:10<span class="tag">&lt;/h1&gt;</span></code></h2>
-    <h1>00:10</h1>
+    <!-- Human readable duration -->
+    <h1 class="alt-1">24h00m59s</h1>
+    <h1 class="alt-1">4h 18m 3s</h1>
+    <h1 class="alt-1">00:01</h1>
 
-    <h2><code><span class="tag">&lt;time <span class="attr">datetime=&quot;2017-12-20T17:47:00+0100&quot;</span>&gt;</span>December 20, 2017 at 17:47 UTC+1 (Paris Winter)<span class="tag">&lt;/time&gt;</span></code></h2>
-    <time datetime="2017-12-20T17:47:00+0100">December 20, 2017 at 17:47 UTC+1 (Paris Winter)</time>
+    <!-- Valid time string -->
+    <div class="alt-2">12:30:39.929</div>
+    <!-- Valid duration string -->
+    <div class="alt-2">P2DT20H00M10S</div>
+    <!-- Python datetime.timedelta str output -->
+    <!-- print datetime.timedelta(days=600, hours=3, minutes=59, seconds=12) -->
+    <div class="alt-2">600 days, 3:59:12</div>
 
-    <h2><code><span class="tag">&lt;time <span class="attr">datetime=&quot;2017-12-20T08:47:00-0800&quot;</span>&gt;</span>December 20, 2017 at 08:47 UTC-8 (California)<span class="tag">&lt;/time&gt;</span></code></h2>
-    <time datetime="2017-12-20T08:47:00-0800">December 20, 2017 at 08:47 UTC-8 (California)</time>
+</div>
 
-    <h2><code><span class="tag">&lt;time <span class="attr">datetime=&quot;2017-12-20T16:47:00+0000&quot;</span>&gt;</span>December 20, 2017 at 16:47 UTC<span class="tag">&lt;/time&gt;</span></code></h2>
-    <time datetime="2017-12-20T16:47:00+0000">December 20, 2017 at 16:47 UTC</time>
-
-    <h2><code><span class="tag">&lt;time <span class="attr">datetime=&quot;2017-12-13T17:43:00&quot;</span>&gt;</span>Friday, December 13th, 2017 5:43pm<span class="tag">&lt;/time&gt;</span></code></h2>
-    <time datetime="2017-12-13T17:43:00">Friday, December 13th, 2017 5:43pm</time>
-
-    <h2><code><span class="tag">&lt;time <span class="attr">datetime=&quot;P2DT20H00M10S&quot;</span>&gt;</span>2 days, 20:00:10<span class="tag">&lt;/time&gt;</span></code></h2>
-    <time datetime="P2DT20H00M10S">2 days, 20:00:10</time>
-
-    <h2><code><span class="tag">&lt;h1&gt;</span>12:30:39.929<span class="tag">&lt;/h1&gt;</span></code></h2>
-    <h1>12:30:39.929</h1>
-
-    <h2><code><span class="tag">&lt;h1&gt;</span>600 days, 3:59:12<span class="tag">&lt;/h1&gt;</span></code></h2>
-    <h1>600 days, 3:59:12</h1>
-
-</article>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="jquery.countdown.js"></script>
-
 <script>
     window.jQuery(function ($) {
         "use strict";
-        $('h1, time').countDown({
+        $('time').countDown({
             with_separators: false
+        });
+        $('.alt-1').countDown({
+            css_class: 'countdown-alt-1'
+        });
+        $('.alt-2').countDown({
+            css_class: 'countdown-alt-2'
         });
     });
 </script>
