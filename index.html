@@ -6,12 +6,13 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="countdown.demo.css" type="text/css">
+    <link rel="stylesheet" href="escapeRoomCustom.css" type="text/css">
 </head>
 <body>
 
 <div id="content">
 
-    <h1 class="alt-1" id="mainClock">00:01</h1>
+    <h1 class="alt-1" id="mainClock">00:00:05</h1>
 
 </div>
 
@@ -30,7 +31,8 @@
             var clock = $(document.getElementById('mainClock'));
             var timeoutScreen = $('<div>Time has Expired</div>');
 
-            clock.after(timeoutScreen)
+            clock.addClass('blink_me');
+            clock.after(timeoutScreen);
         });
 
     });
