@@ -12,12 +12,14 @@
 
 <div id="content">
 
+    <h1 class="alt-1 clockSpacing" id="mainClock">00:40:00</h1>
+
     <div id='errorDiv' class="errorDiv hidden">
         <div id='errorText' class="errorText"> Error </div>
     </div>
 
-    <h1 class="alt-1 clockSpacing" id="mainClock">00:40:00</h1>
     <input type="textbox" class='form' id="field"/>
+
 
 </div>
 
@@ -50,9 +52,9 @@
                 errorText = $(document.getElementById('errorText')),
                 winScreen = $('<div class="timeOutScreen">Congratulations!</div>');
 
-            if(!errorDiv.hasClass('hidden')){
-                errorDiv.addClass('hidden');
-            }
+//            if(!errorDiv.hasClass('hidden')){
+//                errorDiv.addClass('hidden');
+//            }
 
             if (event.which === 13) {
                 valueEntered = this.value.toLowerCase();

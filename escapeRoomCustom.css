@@ -22,13 +22,6 @@
 }
 
 .errorDiv {
-    width: 100%;
-    color: white;
-    height: 100%;
-    z-index: 5;
-    position: absolute;
-    top: 0;
-    left: 0;
 
 }
 
@@ -41,6 +34,7 @@
 }
 
 errorText{
+    color: white;
     font-size: 40px;
 }
 
