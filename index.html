@@ -12,6 +12,10 @@
 
 <div id="content">
 
+    <div id='errorDiv' class="errorDiv hidden">
+        <div class="errorText"> Error </div>
+    </div>
+
     <h1 class="alt-1 clockSpacing" id="mainClock">00:00:05</h1>
     <input type="textbox" class='form' id="field"/>
 
@@ -29,9 +33,11 @@
         });
 
         $('#mainClock').on('time.elapsed', function () {
-            var clock = $(document.getElementById('mainClock'));
-            var timeoutScreen = $('<div class="timeOutScreen">Time has Expired</div>');
+            var clock = $(document.getElementById('mainClock')),
+                timeoutScreen = $('<div class="timeOutScreen">Time has Expired</div>'),
+                inputBox = $(document.getElementById('field'));
 
+            inputBox.remove();
             clock.addClass('blink_me');
             clock.after(timeoutScreen);
         });
@@ -40,17 +46,22 @@
         $("#field").keyup(function (event) {
             var valueEntered,
                 clock = $(document.getElementById('mainClock')),
-                errorScreen = $('<div class="timeOutScreen">Error</div>'),
+                errorDiv = $(document.getElementById('errorDiv')),
                 winScreen = $('<div class="timeOutScreen">Congratulations!</div>');
 
+            if(!errorDiv.hasClass('hidden')){
+                errorDiv.addClass('hidden');
+            }
+
             if (event.which === 13) {
-                valueEntered = this.value.ignoreCase;
+                valueEntered = this.value.toLowerCase();
 
                 if(valueEntered === 'compass'){
                     clock.after(winScreen);
                     clock.remove();
                 }else{
-                    clock.after(errorScreen);
+                    errorDiv.toggleClass('hidden');
+                    errorDiv.addClass('errorDivAnnimation');
                 }
 
             }

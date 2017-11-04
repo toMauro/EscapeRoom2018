@@ -20,3 +20,35 @@
     margin-left: 40%;
     margin-top: 30px;
 }
+
+.errorDiv {
+    width: 100%;
+    color: white;
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.errorDivAnnimation{
+    animation: blinker 1s linear infinite;
+    animation: disappear 0s ease-in 5s forwards;
+}
+
+.hidden{
+    display:none;
+}
+
+errorText{
+    font-size: 40px;
+}
+
+@keyframes disappear {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
