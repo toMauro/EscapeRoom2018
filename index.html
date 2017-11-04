@@ -56,19 +56,20 @@
             if (event.which === 13) {
                 valueEntered = this.value.toLowerCase();
 
-                if(!errorDiv.hasClass('hidden')){
-                    errorDiv.addClass('hidden');
-                }
-
                 if(valueEntered === 'compass'){
                     clock.after(winScreen);
                     clock.remove();
                 }else{
                     errorDiv.toggleClass('hidden');
-                    errorDiv.addClass('errorDivAnnimation');
-                    errorText.addClass('blink_me');
+                    //errorDiv.addClass('errorDivAnnimation');
+                    //errorText.addClass('blink_me');
                 }
 
+            }else{
+                //toggle error msg
+                if(!errorDiv.hasClass('hidden')){
+                    errorDiv.addClass('hidden');
+                }
             }
         });
 
