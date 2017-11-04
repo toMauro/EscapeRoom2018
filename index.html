@@ -13,6 +13,7 @@
 <div id="content">
 
     <h1 class="alt-1 clockSpacing" id="mainClock">00:00:05</h1>
+    <input type="textbox" class='form' id="field"/>
 
 </div>
 
@@ -34,6 +35,14 @@
             clock.addClass('blink_me');
             clock.after(timeoutScreen);
         });
+
+
+        $("#field").keyup(function (event) {
+            if (event.which === 13) {
+                console.log(document.myform);
+            }
+        });
+
 
     });
 </script>
