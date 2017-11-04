@@ -13,7 +13,7 @@
 <div id="content">
 
     <div id='errorDiv' class="errorDiv hidden">
-        <div class="errorText"> Error </div>
+        <div id='errorText' class="errorText"> Error </div>
     </div>
 
     <h1 class="alt-1 clockSpacing" id="mainClock">00:40:00</h1>
@@ -47,6 +47,7 @@
             var valueEntered,
                 clock = $(document.getElementById('mainClock')),
                 errorDiv = $(document.getElementById('errorDiv')),
+                errorText = $(document.getElementById('errorText')),
                 winScreen = $('<div class="timeOutScreen">Congratulations!</div>');
 
             if(!errorDiv.hasClass('hidden')){
@@ -62,6 +63,7 @@
                 }else{
                     errorDiv.toggleClass('hidden');
                     errorDiv.addClass('errorDivAnnimation');
+                    errorText.addClass('blink_me');
                 }
 
             }

@@ -33,8 +33,7 @@
 }
 
 .errorDivAnnimation{
-    animation: blinker 1s linear infinite;
-    animation: disappear 0s ease-in 5s forwards;
+    animation: disappear 0s ease-in 3s forwards;
 }
 
 .hidden{
