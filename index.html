@@ -12,7 +12,7 @@
 
 <div id="content">
 
-    <h1 class="alt-1" id="mainClock">00:00:05</h1>
+    <h1 class="alt-1 clockSpacing" id="mainClock">00:00:05</h1>
 
 </div>
 
@@ -29,7 +29,7 @@
 
         $('#mainClock').on('time.elapsed', function () {
             var clock = $(document.getElementById('mainClock'));
-            var timeoutScreen = $('<div>Time has Expired</div>');
+            var timeoutScreen = $('<div class="timeOutScreen">Time has Expired</div>');
 
             clock.addClass('blink_me');
             clock.after(timeoutScreen);

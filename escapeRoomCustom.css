@@ -5,3 +5,13 @@
 @keyframes blinker {
     50% { opacity: 0; }
 }
+
+.timeOutScreen {
+    color: red;
+    text-align: center;
+    font-size: 40px;
+}
+
+.clockSpacing{
+    padding-left: 25%;
+}
