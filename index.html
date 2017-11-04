@@ -38,8 +38,21 @@
 
 
         $("#field").keyup(function (event) {
+            var valueEntered,
+                clock = $(document.getElementById('mainClock')),
+                errorScreen = $('<div class="timeOutScreen">Error</div>'),
+                winScreen = $('<div class="timeOutScreen">Congratulations!</div>');
+
             if (event.which === 13) {
-                console.log(document.myform);
+                valueEntered = this.value.ignoreCase;
+
+                if(valueEntered === 'compass'){
+                    clock.after(winScreen);
+                    clock.remove();
+                }else{
+                    clock.after(errorScreen);
+                }
+
             }
         });
 
