@@ -36,7 +36,7 @@
 .errorText{
     color: red;
     font-size: 45px;
-    margin-left: 50%;
+    margin-left: 45%;
 }
 
 @keyframes disappear {
@@ -51,5 +51,5 @@
     color: red;
     text-align: center;
     font-size: 40px;
-    padding-top: 50%;
+    padding-top: 30%;
 }
