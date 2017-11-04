@@ -52,12 +52,13 @@
                 errorText = $(document.getElementById('errorText')),
                 winScreen = $('<div class="timeOutScreen">Congratulations!</div>');
 
-//            if(!errorDiv.hasClass('hidden')){
-//                errorDiv.addClass('hidden');
-//            }
 
             if (event.which === 13) {
                 valueEntered = this.value.toLowerCase();
+
+                if(!errorDiv.hasClass('hidden')){
+                    errorDiv.addClass('hidden');
+                }
 
                 if(valueEntered === 'compass'){
                     clock.after(winScreen);
