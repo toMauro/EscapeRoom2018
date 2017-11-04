@@ -33,9 +33,10 @@
     display:none;
 }
 
-errorText{
-    color: white;
+.errorText{
+    color: red;
     font-size: 40px;
+    margin-left: 40%;
 }
 
 @keyframes disappear {
