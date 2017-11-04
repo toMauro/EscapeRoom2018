@@ -50,13 +50,16 @@
                 clock = $(document.getElementById('mainClock')),
                 errorDiv = $(document.getElementById('errorDiv')),
                 errorText = $(document.getElementById('errorText')),
-                winScreen = $('<div class="timeOutScreen">Congratulations!</div>');
+                inputBox = $(document.getElementById('field')),
+                winScreen = $('<div class="VictoryScreen">Congratulations!</div>');
 
 
             if (event.which === 13) {
                 valueEntered = this.value.toLowerCase();
 
                 if(valueEntered === 'compass'){
+                    inputBox.remove();
+
                     clock.after(winScreen);
                     clock.remove();
                 }else{
