@@ -89,10 +89,17 @@
         });
 
         var parseWinTime = function(rawTime){
-            var winTime;
+            var winTimeMsg,
+                rawTimeSplit = rawTime.split(':'),
+                minutes = rawTimeSplit[1],
+                seconds = rawTimeSplit[2];
 
+            minutes = 40 - minutes.split('Minutes')[0];
+            seconds = 60 - seconds.split('Seconds')[0];
 
-            return rawTime;
+            winTimeMsg = "You escaped in: " + minutes + ":" + seconds;
+
+            return winTimeMsg;
         }
 
 
