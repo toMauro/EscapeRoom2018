@@ -57,7 +57,10 @@
                 errorDiv = $(document.getElementById('errorDiv')),
                 errorText = $(document.getElementById('errorText')),
                 inputBox = $(document.getElementById('field')),
-                winScreen = $('<div class="VictoryScreen">Congratulations!</div>');
+                winScreen = $('<div class="VictoryScreen">Congratulations!</div>'),
+                winTime = $('<div class="VictoryScreen"></div>'),
+                rawTime = clock[0].innerText,
+                voctiryTimrClean;
 
 
             if (event.which === 13) {
@@ -65,6 +68,9 @@
 
                 if(valueEntered === 'compass'){
                     inputBox.remove();
+
+                    winTime.append(voctiryTimrClean = parseWinTime(rawTime));
+                    winScreen.append(winTime);
 
                     clock.after(winScreen);
                     clock.remove();
@@ -81,6 +87,13 @@
                 }
             }
         });
+
+        var parseWinTime = function(rawTime){
+            var winTime;
+
+
+            return rawTime;
+        }
 
 
     });
