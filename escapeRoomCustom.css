@@ -7,17 +7,18 @@
 }
 
 .timeOutScreen {
-    color: red;
+    color: white;
     text-align: center;
     font-size: 40px;
 }
 
 .clockSpacing{
-    padding-left: 25%;
+    padding-left: 35%;
+    margin-top: 30%;
 }
 
 .form{
-    margin-left: 40%;
+    margin-left: 45%;
     margin-top: 30px;
 }
 
@@ -34,7 +35,7 @@
 }
 
 .errorText{
-    color: red;
+    color: white;
     font-size: 45px;
     margin-left: 45%;
 }
@@ -48,14 +49,14 @@
 }
 
 .VictoryScreen{
-    color: red;
+    color: white;
     text-align: center;
     font-size: 40px;
     padding-top: 30%;
 }
 
 .VictoryTime{
-    color: red;
+    color: white;
     text-align: center;
     font-size: 40px;
 }
@@ -63,3 +64,13 @@
 .mainComp{
    position: relative;
 }
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('DragonBattle.jpg');
+    background-repeat: no-repeat;
+    background-position: top; 
+}
+

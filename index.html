@@ -7,27 +7,23 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="countdown.demo.css" type="text/css">
     <link rel="stylesheet" href="escapeRoomCustom.css" type="text/css">
-    <link rel="stylesheet" href="nightSky.css" type="text/css">
 </head>
 <body>
 
 <div id="content">
 
-    <div class="stars"></div>
-    <!--<div class="twinkling"></div>-->
-    <div class="clouds"></div>
+        <div class="mainComp">
+            <h1 class="alt-1 clockSpacing" id="mainClock">00:40:00</h1>
 
-    <div class="mainComp">
-        <h1 class="alt-1 clockSpacing" id="mainClock">00:40:00</h1>
+            <div id='errorDiv' class="errorDiv hidden">
+                <div id='errorText' class="errorText"> Error </div>
+            </div>
 
-        <div id='errorDiv' class="errorDiv hidden">
-            <div id='errorText' class="errorText"> Error </div>
+            <input type="textbox" class='form' id="field"/>
         </div>
 
-        <input type="textbox" class='form' id="field"/>
     </div>
-
-</div>
+</body>
 
 <script src="jquery-3.2.1.min.js"></script>
 <script src="jquery.countdown.js"></script>
@@ -66,7 +62,7 @@
             if (event.which === 13) {
                 valueEntered = this.value.toLowerCase();
 
-                if(valueEntered === 'compass'){
+                if(valueEntered === 'hreidmarr'){
                     inputBox.remove();
 
                     winTime.append(voctiryTimrClean = parseWinTime(rawTime));
@@ -106,5 +102,5 @@
     });
 </script>
 
-</body>
+
 </html>
